@@ -17,7 +17,6 @@ public class GameActivity extends Activity
 	
 	private TextView resultText;
 	
-//	private ArrayList<String> roshamboList;
 	
 	int userInput;
 	
@@ -37,7 +36,8 @@ public class GameActivity extends Activity
 		
 		resultText = (TextView) findViewById(R.id.resultText);
 		
-//		fillTheRoshamboList();		
+		comImageView.setImageResource(R.drawable.questionmrk);
+				
 		setupListeners();
 	}
 	/**
@@ -63,15 +63,6 @@ public class GameActivity extends Activity
 		
 		return enemyResponse;
 	}
-	/**
-	 * Fills up the list of options that the comp can choose from.
-	 */
-//	public void fillTheRoshamboList()
-//	{
-//		roshamboList.add("Rock");
-//		roshamboList.add("Paper");
-//		roshamboList.add("Scissors");
-//	}
 	
 	/**
 	 * The buttons for the user's choice during the game.
@@ -86,7 +77,8 @@ public class GameActivity extends Activity
 			{
 				userInput = 0;
 				userImageView.setImageResource(R.drawable.rock);
-				resultText.setText(R.id.resultText);
+				resultText.setText("Select your Choice!");
+				comImageView.setImageResource(R.drawable.questionmrk);
 			}
 		});
 		
@@ -98,7 +90,8 @@ public class GameActivity extends Activity
 			{
 				userInput = 1;
 				userImageView.setImageResource(R.drawable.paper);
-				resultText.setText(R.id.resultText);
+				resultText.setText("Select your Choice!");
+				comImageView.setImageResource(R.drawable.questionmrk);
 			}
 		});
 		
@@ -110,7 +103,8 @@ public class GameActivity extends Activity
 			{
 				userInput = 2;
 				userImageView.setImageResource(R.drawable.scissors);
-				resultText.setText(R.id.resultText);
+				resultText.setText("Select your Choice!");
+				comImageView.setImageResource(R.drawable.questionmrk);
 			}
 		});
 		

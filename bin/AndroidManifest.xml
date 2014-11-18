@@ -34,6 +34,10 @@
             android:name=".GameActivity"
             android:label="@string/title_activity_game" >
         </activity>
+        <activity
+            android:name=".CreditActivity"
+            android:label="@string/title_activity_credit" >
+        </activity>
     </application>
 
 </manifest>
