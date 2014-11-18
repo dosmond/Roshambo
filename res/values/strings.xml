@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Roshambo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="selectChoice">Select your Choice!</string>
+
+</resources>
