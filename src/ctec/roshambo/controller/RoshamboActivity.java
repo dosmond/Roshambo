@@ -7,10 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import ctec.state.model.RoshamboState;
 
 public class RoshamboActivity extends Activity
 {
 	private Button startButton, helpButton, creditsButton; 
+	
+	private RoshamboState appState;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -21,6 +25,8 @@ public class RoshamboActivity extends Activity
 		startButton = (Button) findViewById(R.id.startButton);
 		helpButton = (Button) findViewById(R.id.helpButton);
 		creditsButton = (Button) findViewById(R.id.creditsButton);
+		
+		appState = (RoshamboState) this.getApplication();
 		
 		setupListeners();
 	

@@ -32,15 +32,7 @@
         android:text="Select" />
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="You" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/enemyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -59,7 +51,7 @@
         android:id="@+id/comImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/enemyText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp"
         android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
@@ -82,5 +74,56 @@
         android:layout_marginBottom="34dp"
         android:text="@string/selectChoice"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/winCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/winText"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/winText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/rockButton"
+        android:layout_marginRight="14dp"
+        android:text="Wins:" />
+
+    <TextView
+        android:id="@+id/lossText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/scissorsButton"
+        android:layout_alignParentBottom="true"
+        android:text="Fails:" />
+
+    <TextView
+        android:id="@+id/lossCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/lossText"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/gameReturnButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/selectButton"
+        android:text="Return" />
+
+    <TextView
+        android:id="@+id/youText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="You" />
 
 </RelativeLayout>

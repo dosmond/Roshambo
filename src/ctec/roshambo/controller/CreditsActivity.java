@@ -7,10 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import ctec.state.model.RoshamboState;
 
 public class CreditsActivity extends Activity
 {
 	private Button creditReturnButton;
+	
+	private RoshamboState appState;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -19,6 +22,8 @@ public class CreditsActivity extends Activity
 		setContentView(R.layout.activity_credits);
 		
 		creditReturnButton = (Button) findViewById(R.id.creditReturnButton);
+		
+		appState = (RoshamboState) this.getApplication();
 		
 		setupListeners();
 		

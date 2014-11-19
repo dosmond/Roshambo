@@ -8,17 +8,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu.*;
 import android.widget.*;
+import ctec.state.model.RoshamboState;
 
 public class GameActivity extends Activity
 {
-	private Button rockButton, paperButton, scissorsButton, selectButton;
+	private Button rockButton, paperButton, scissorsButton, selectButton, gameReturnButton;
 	
 	private ImageView userImageView, comImageView;
 	
-	private TextView resultText;
+	private TextView resultText, winCount, lossCount, winText, lossText;
 	
+	private RoshamboState appState;
 	
 	int userInput;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -30,15 +33,26 @@ public class GameActivity extends Activity
 		paperButton = (Button) findViewById(R.id.paperButton);
 		scissorsButton = (Button) findViewById(R.id.scissorsButton);
 		selectButton = (Button) findViewById(R.id.selectButton);
+		gameReturnButton = (Button) findViewById(R.id.gameReturnButton);
 		
 		userImageView = (ImageView) findViewById(R.id.userImageView);
 		comImageView = (ImageView) findViewById(R.id.comImageView);
 		
 		resultText = (TextView) findViewById(R.id.resultText);
+		winCount = (TextView) findViewById(R.id.winCount);
+		lossCount = (TextView) findViewById(R.id.lossCount);
+		winText = (TextView) findViewById(R.id.winText);
+		lossText = (TextView) findViewById(R.id.lossText);
+		
 		
 		comImageView.setImageResource(R.drawable.questionmrk);
+		
+		appState = (RoshamboState) this.getApplication();
 				
 		setupListeners();
+		
+		//winCount.setText(appState.getWin());
+		//lossCount.setText(appState.getLoss());
 	}
 	/**
 	 * Determines what the computer chooses.
@@ -108,15 +122,26 @@ public class GameActivity extends Activity
 			}
 		});
 		
-		selectButton.setOnClickListener(new View.OnClickListener()
+		gameReturnButton.setOnClickListener(new View.OnClickListener()
 		{
 			
 			@Override
 			public void onClick(View currentView)
 			{
-				//Intent transferIntent = new Intent (currentView.getContext(), RoshamboActivity.class);
-				//startActivityForResult(transferIntent, 0);
 				
+				
+				Intent returnIntent = new Intent();
+				setResult(RESULT_OK, returnIntent);
+				finish();
+			}
+		});
+		
+		selectButton.setOnClickListener(new View.OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View currentView)
+			{	
 				enemyChoice();
 				
 				if (userInput == 0)
@@ -128,10 +153,14 @@ public class GameActivity extends Activity
 					else if(enemyChoice() == 1)
 					{
 						resultText.setText("Ooooh you lose! Try again!");
+						appState.setLoss(appState.getLoss() + 1);
+						lossCount.setText(Integer.toString(appState.getLoss()));
 					}
 					else if(enemyChoice() == 2)
 					{
 						resultText.setText("You Win! Good Job!");
+						appState.setWin(appState.getWin() + 1);
+						winCount.setText(Integer.toString(appState.getWin()));
 					}
 				}
 				if (userInput == 1)
@@ -139,6 +168,8 @@ public class GameActivity extends Activity
 					if (enemyChoice() == 0)
 					{
 						resultText.setText("You Win! Good Job!");
+						appState.setWin(appState.getWin() + 1);
+						winCount.setText(Integer.toString(appState.getWin()));
 					}
 					else if(enemyChoice() == 1)
 					{
@@ -147,6 +178,8 @@ public class GameActivity extends Activity
 					else if(enemyChoice() == 2)
 					{
 						resultText.setText("Ooooh you lose! Try again!");
+						appState.setLoss(appState.getLoss() + 1);
+						lossCount.setText(Integer.toString(appState.getLoss()));
 					}
 				}
 				else if (userInput == 2)
@@ -154,10 +187,14 @@ public class GameActivity extends Activity
 					if (enemyChoice() == 0)
 					{
 						resultText.setText("Ooooh you lose! Try again!");
+						appState.setLoss(appState.getLoss() + 1);
+						lossCount.setText(Integer.toString(appState.getLoss()));
 					}
 					else if(enemyChoice() == 1)
 					{
 						resultText.setText("You Win! Good Job!");
+						appState.setWin(appState.getWin() + 1);
+						winCount.setText(Integer.toString(appState.getWin()));
 					}
 					else if(enemyChoice() == 2)
 					{

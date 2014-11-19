@@ -7,11 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import ctec.state.model.RoshamboState;
 
 public class HelpActivity extends Activity
 {
 	
 	private Button helpReturnButton;
+	
+	private RoshamboState appState;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -20,6 +23,8 @@ public class HelpActivity extends Activity
 		setContentView(R.layout.activity_help);
 		
 		helpReturnButton = (Button) findViewById(R.id.helpReturnButton);
+		
+		appState = (RoshamboState) this.getApplication();
 		
 		setupListeners();
 	}
