@@ -8,5 +8,6 @@
     <string name="title_activity_game">GameActivity</string>
     <string name="selectChoice">Select your Choice!</string>
     <string name="title_activity_credit">CreditActivity</string>
+    <color name="White">#FFF</color>
 
 </resources>

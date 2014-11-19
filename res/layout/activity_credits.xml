@@ -24,49 +24,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
-            android:text="Daniel Osmond" />
+            android:text="Daniel Osmond"
+            android:textColor="@color/White" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
-            android:text="Nery Gonzalez" />
+            android:text="Nery Gonzalez"
+            android:textColor="@color/White" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="34dp"
-            android:text="Stockton Slack" />
+            android:text="Stockton Slack"
+            android:textColor="@color/White" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="26dp"
-            android:text="Bryon Attaway" />
+            android:text="Bryon Attaway"
+            android:textColor="@color/White" />
 
         <TextView
             android:id="@+id/resultText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="Avery Boman" />
+            android:text="Avery Boman"
+            android:textColor="@color/White" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="30dp"
-            android:text="Christopher Dazley" />
+            android:text="Christopher Dazley"
+            android:textColor="@color/White" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="86dp"
-            android:text="Trevor Ross" />
+            android:text="Trevor Ross"
+            android:textColor="@color/White" />
 
     </LinearLayout>
 
