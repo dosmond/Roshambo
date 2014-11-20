@@ -12,17 +12,45 @@ import ctec.state.model.RoshamboState;
 
 public class GameActivity extends Activity
 {
+	
+	
+	/***************************************
+	 * 
+	 * Declaration Section
+	 * 
+	 ***************************************/
+	
+	
+	
 	private Button rockButton, paperButton, scissorsButton, selectButton, gameReturnButton;
 	
 	private ImageView userImageView, comImageView;
 	
 	private TextView resultText, winCount, lossCount, winText, lossText;
 	
+	/**
+	 * The state being saved for wins/losses
+	 */
 	private RoshamboState appState;
 	
+	/**
+	 * The user's choice to be compared to the comp choice.
+	 */
 	int userInput;
 	
 	
+	
+	/*************************************************************
+	 * 
+	 * Method Section
+	 * 
+	 *************************************************************/
+	
+	
+	
+	/**
+	 * Setting up all of the objects and calling the setupListeners().
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -77,6 +105,69 @@ public class GameActivity extends Activity
 		
 		return enemyResponse;
 	}
+	/**
+	 * Logic behind the RPS winner.
+	 */
+	public void findWinner()
+	{
+		if (userInput == 0)
+		{
+			if (enemyChoice() == 0)
+			{
+				resultText.setText("Tie! Try again!");
+			}
+			else if(enemyChoice() == 1)
+			{
+				resultText.setText("Ooooh you lose! Try again!");
+				appState.setLoss(appState.getLoss() + 1);
+				lossCount.setText(Integer.toString(appState.getLoss()));
+			}
+			else if(enemyChoice() == 2)
+			{
+				resultText.setText("You Win! Good Job!");
+				appState.setWin(appState.getWin() + 1);
+				winCount.setText(Integer.toString(appState.getWin()));
+			}
+		}
+		if (userInput == 1)
+		{
+			if (enemyChoice() == 0)
+			{
+				resultText.setText("You Win! Good Job!");
+				appState.setWin(appState.getWin() + 1);
+				winCount.setText(Integer.toString(appState.getWin()));
+			}
+			else if(enemyChoice() == 1)
+			{
+				resultText.setText("Tie! Try again!");
+			}
+			else if(enemyChoice() == 2)
+			{
+				resultText.setText("Ooooh you lose! Try again!");
+				appState.setLoss(appState.getLoss() + 1);
+				lossCount.setText(Integer.toString(appState.getLoss()));
+			}
+		}
+		else if (userInput == 2)
+		{
+			if (enemyChoice() == 0)
+			{
+				resultText.setText("Ooooh you lose! Try again!");
+				appState.setLoss(appState.getLoss() + 1);
+				lossCount.setText(Integer.toString(appState.getLoss()));
+			}
+			else if(enemyChoice() == 1)
+			{
+				resultText.setText("You Win! Good Job!");
+				appState.setWin(appState.getWin() + 1);
+				winCount.setText(Integer.toString(appState.getWin()));
+			}
+			else if(enemyChoice() == 2)
+			{
+				resultText.setText("Tie! Try again!");
+			}
+		}
+	}
 	
 	/**
 	 * The buttons for the user's choice during the game.
@@ -129,7 +220,6 @@ public class GameActivity extends Activity
 			public void onClick(View currentView)
 			{
 				
-				
 				Intent returnIntent = new Intent();
 				setResult(RESULT_OK, returnIntent);
 				finish();
@@ -143,64 +233,7 @@ public class GameActivity extends Activity
 			public void onClick(View currentView)
 			{	
 				enemyChoice();
-				
-				if (userInput == 0)
-				{
-					if (enemyChoice() == 0)
-					{
-						resultText.setText("Tie! Try again!");
-					}
-					else if(enemyChoice() == 1)
-					{
-						resultText.setText("Ooooh you lose! Try again!");
-						appState.setLoss(appState.getLoss() + 1);
-						lossCount.setText(Integer.toString(appState.getLoss()));
-					}
-					else if(enemyChoice() == 2)
-					{
-						resultText.setText("You Win! Good Job!");
-						appState.setWin(appState.getWin() + 1);
-						winCount.setText(Integer.toString(appState.getWin()));
-					}
-				}
-				if (userInput == 1)
-				{
-					if (enemyChoice() == 0)
-					{
-						resultText.setText("You Win! Good Job!");
-						appState.setWin(appState.getWin() + 1);
-						winCount.setText(Integer.toString(appState.getWin()));
-					}
-					else if(enemyChoice() == 1)
-					{
-						resultText.setText("Tie! Try again!");
-					}
-					else if(enemyChoice() == 2)
-					{
-						resultText.setText("Ooooh you lose! Try again!");
-						appState.setLoss(appState.getLoss() + 1);
-						lossCount.setText(Integer.toString(appState.getLoss()));
-					}
-				}
-				else if (userInput == 2)
-				{
-					if (enemyChoice() == 0)
-					{
-						resultText.setText("Ooooh you lose! Try again!");
-						appState.setLoss(appState.getLoss() + 1);
-						lossCount.setText(Integer.toString(appState.getLoss()));
-					}
-					else if(enemyChoice() == 1)
-					{
-						resultText.setText("You Win! Good Job!");
-						appState.setWin(appState.getWin() + 1);
-						winCount.setText(Integer.toString(appState.getWin()));
-					}
-					else if(enemyChoice() == 2)
-					{
-						resultText.setText("Tie! Try again!");
-					}
-				}
+				findWinner();
 			}
 		});
 	}

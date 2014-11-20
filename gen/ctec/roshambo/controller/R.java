@@ -1126,7 +1126,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
-        public static final int resultText=0x7f050041;
+        public static final int resultText=0x7f050042;
         public static final int rockButton=0x7f050044;
         public static final int scissorsButton=0x7f05004a;
         public static final int search_badge=0x7f050032;
@@ -1150,9 +1150,9 @@ containing a value of this type.
         public static final int tabMode=0x7f050002;
         public static final int textView4=0x7f05003f;
         public static final int textView5=0x7f05003e;
-        public static final int textView6=0x7f050043;
-        public static final int textView7=0x7f050040;
-        public static final int textView8=0x7f050042;
+        public static final int textView6=0x7f050041;
+        public static final int textView7=0x7f050043;
+        public static final int textView8=0x7f050040;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;

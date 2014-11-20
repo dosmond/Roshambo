@@ -288,7 +288,7 @@ int id paperButton 0x7f050045
 int id progress_circular 0x7f050018
 int id progress_horizontal 0x7f050019
 int id radio 0x7f05002f
-int id resultText 0x7f050041
+int id resultText 0x7f050042
 int id rockButton 0x7f050044
 int id scissorsButton 0x7f05004a
 int id search_badge 0x7f050032
@@ -312,9 +312,9 @@ int id submit_area 0x7f050039
 int id tabMode 0x7f050002
 int id textView4 0x7f05003f
 int id textView5 0x7f05003e
-int id textView6 0x7f050043
-int id textView7 0x7f050040
-int id textView8 0x7f050042
+int id textView6 0x7f050041
+int id textView7 0x7f050043
+int id textView8 0x7f050040
 int id title 0x7f05002b
 int id top_action_bar 0x7f050020
 int id up 0x7f050021
