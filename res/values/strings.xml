@@ -9,5 +9,6 @@
     <string name="selectChoice">Select your Choice!</string>
     <string name="title_activity_credit">CreditActivity</string>
     <color name="White">#FFF</color>
+    <color name="ForestGreen">#D2691E</color>
 
 </resources>
